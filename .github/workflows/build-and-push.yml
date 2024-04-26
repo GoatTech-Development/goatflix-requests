@@ -46,6 +46,6 @@ jobs:
             COMMIT_TAG=${{ github.sha }}
           tags: |
             liquidgoat/goatflix-requests:latest
-            ghcr.io/nhitz/goatflix-requests:latest
+            ghcr.io/goattech-development/goatflix-requests:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
