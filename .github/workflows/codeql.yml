@@ -1,4 +1,4 @@
-name: 'CodeQueryLanguage'
+name: 'Static Vulnerability Analysis'
 
 on: workflow_dispatch
 #  push:
