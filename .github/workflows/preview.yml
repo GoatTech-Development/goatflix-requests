@@ -40,5 +40,5 @@ jobs:
           build-args: |
             COMMIT_TAG=${{ github.sha }}
           tags: |
-            nhitz/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
-            ghcr.io/nhitz/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
+            goattech-development/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
+            ghcr.io/goattech-development/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
