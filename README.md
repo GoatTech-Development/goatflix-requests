@@ -9,8 +9,6 @@ https://docs.overseerr.dev/getting-started/installation
 In a project directory, create a docker-compose.yml:
 
 ```
-version: "3.8"
-
 services:
   goatflix-requests:
     image: liquidgoat/goatflix-requests:latest
