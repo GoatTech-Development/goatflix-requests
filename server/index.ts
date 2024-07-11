@@ -107,14 +107,33 @@ app
     server.use(cookieParser());
     server.use(express.json());
     server.use(express.urlencoded({ extended: true }));
+    // server.use((req, _res, next) => {
+    //   try {
+    //     const descriptor = Object.getOwnPropertyDescriptor(req, 'ip');
+    //     if (descriptor?.writable === true) {
+    //       req.ip = getClientIp(req) ?? '';
+    //     }
+    //   } catch (e) {
+    //     logger.error('Failed to attach the ip to the request', {
+    //       label: 'Middleware',
+    //       message: e.message,
+    //     });
+    //   } finally {
+    //     next();
+    //   }
+    // });
     server.use((req, _res, next) => {
       try {
         const descriptor = Object.getOwnPropertyDescriptor(req, 'ip');
         if (descriptor?.writable === true) {
-          req.ip = getClientIp(req) ?? '';
+          // Even if writable, avoid TypeScript error by using a custom property
+          (req as any).ip = getClientIp(req) ?? '';
+        } else {
+          // Attach a custom property to hold the client IP if 'ip' is read-only
+          (req as any).clientIp = getClientIp(req) ?? '';
         }
       } catch (e) {
-        logger.error('Failed to attach the ip to the request', {
+        logger.error('Failed to attach the IP to the request', {
           label: 'Middleware',
           message: e.message,
         });
@@ -122,6 +141,7 @@ app
         next();
       }
     });
+
     if (settings.main.csrfProtection) {
       server.use(
         csurf({
