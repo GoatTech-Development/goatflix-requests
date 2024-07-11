@@ -277,8 +277,8 @@ const TvDetails = ({ tv }: TvDetailsProps) => {
           <CachedImage
             alt=""
             src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${data.backdropPath}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             priority
           />
           <div
@@ -329,7 +329,7 @@ const TvDetails = ({ tv }: TvDetailsProps) => {
                 : '/images/overseerr_poster_not_found.png'
             }
             alt=""
-            layout="responsive"
+            style={{ objectFit: 'cover' }}
             width={600}
             height={900}
             priority

@@ -125,8 +125,8 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
               <CachedImage
                 alt=""
                 src={backdrop}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 priority
               />
               <div

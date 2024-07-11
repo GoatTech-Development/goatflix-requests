@@ -205,8 +205,8 @@ const IssueDetails = () => {
           <CachedImage
             alt=""
             src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${data.backdropPath}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             priority
           />
           <div
@@ -227,7 +227,7 @@ const IssueDetails = () => {
                 : '/images/overseerr_poster_not_found.png'
             }
             alt=""
-            layout="responsive"
+            fill
             width={600}
             height={900}
             priority

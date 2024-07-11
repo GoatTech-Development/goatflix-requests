@@ -226,8 +226,8 @@ const PersonDetails = () => {
             <CachedImage
               src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${data.profilePath}`}
               alt=""
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
             />
           </div>
         )}

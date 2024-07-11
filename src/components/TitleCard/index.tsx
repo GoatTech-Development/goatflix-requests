@@ -132,8 +132,8 @@ const TitleCard = ({
                 ? `https://image.tmdb.org/t/p/w300_and_h450_face${image}`
                 : `/images/overseerr_poster_not_found_logo_top.png`
             }
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
           />
           <div className="absolute left-0 right-0 flex items-center justify-between p-2">
             <div
