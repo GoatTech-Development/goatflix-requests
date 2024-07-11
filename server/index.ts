@@ -127,10 +127,10 @@ app
         const descriptor = Object.getOwnPropertyDescriptor(req, 'ip');
         if (descriptor?.writable === true) {
           // Even if writable, avoid TypeScript error by using a custom property
-          (req as any).ip = getClientIp(req) ?? '';
+          (req as { ip?: string }).ip = getClientIp(req) ?? '';
         } else {
           // Attach a custom property to hold the client IP if 'ip' is read-only
-          (req as any).clientIp = getClientIp(req) ?? '';
+          (req as { clientIp?: string }).clientIp = getClientIp(req) ?? '';
         }
       } catch (e) {
         logger.error('Failed to attach the IP to the request', {
