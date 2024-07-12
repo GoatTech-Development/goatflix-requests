@@ -156,7 +156,7 @@ const UserProfile = () => {
                         : `/users/${user?.id}/requests?filter=all`
                     }
                   >
-                    <a>{intl.formatNumber(user.requestCount)}</a>
+                    {intl.formatNumber(user.requestCount)}
                   </Link>
                 </dd>
               </div>
@@ -288,11 +288,10 @@ const UserProfile = () => {
                     ? '/profile/requests?filter=all'
                     : `/users/${user?.id}/requests?filter=all`
                 }
+                className="slider-title"
               >
-                <a className="slider-title">
-                  <span>{intl.formatMessage(messages.recentrequests)}</span>
-                  <ArrowRightCircleIcon />
-                </a>
+                <span>{intl.formatMessage(messages.recentrequests)}</span>
+                <ArrowRightCircleIcon />
               </Link>
             </div>
             <Slider
@@ -329,11 +328,10 @@ const UserProfile = () => {
                     ? '/profile/watchlist'
                     : `/users/${user?.id}/watchlist`
                 }
+                className="slider-title"
               >
-                <a className="slider-title">
-                  <span>{intl.formatMessage(messages.plexwatchlist)}</span>
-                  <ArrowRightCircleIcon />
-                </a>
+                <span>{intl.formatMessage(messages.plexwatchlist)}</span>
+                <ArrowRightCircleIcon />
               </Link>
             </div>
             <Slider
