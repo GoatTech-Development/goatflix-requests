@@ -324,8 +324,8 @@ const RequestCard = ({ request, onTitleData }: RequestCardProps) => {
             <CachedImage
               alt=""
               src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${title.backdropPath}`}
-              fill
-              style={{ objectFit: 'cover' }}
+              layout="fill"
+              objectFit="cover"
             />
             <div
               className="absolute inset-0"
@@ -581,7 +581,7 @@ const RequestCard = ({ request, onTitleData }: RequestCardProps) => {
                   : '/images/overseerr_poster_not_found.png'
               }
               alt=""
-              fill
+              layout="responsive"
               width={600}
               height={900}
             />

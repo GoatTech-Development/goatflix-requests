@@ -53,8 +53,8 @@ const PersonCard = ({
                     <CachedImage
                       src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${profilePath}`}
                       alt=""
-                      fill
-                      style={{ objectFit: 'cover' }}
+                      layout="fill"
+                      objectFit="cover"
                     />
                   </div>
                 ) : (

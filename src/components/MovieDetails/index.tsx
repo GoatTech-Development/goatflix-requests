@@ -262,8 +262,8 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
           <CachedImage
             alt=""
             src={`https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${data.backdropPath}`}
-            fill
-            style={{ objectFit: 'cover' }}
+            layout="fill"
+            objectFit="cover"
             priority
           />
           <div
@@ -304,7 +304,7 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
                 : '/images/overseerr_poster_not_found.png'
             }
             alt=""
-            fill
+            layout="responsive"
             width={600}
             height={900}
             priority
@@ -487,8 +487,8 @@ const MovieDetails = ({ movie }: MovieDetailsProps) => {
                       <CachedImage
                         src={`https://image.tmdb.org/t/p/w1440_and_h320_multi_faces/${data.collection.backdropPath}`}
                         alt=""
-                        fill
-                        style={{ objectFit: 'cover' }}
+                        layout="fill"
+                        objectFit="cover"
                       />
                       <div
                         className="absolute inset-0"

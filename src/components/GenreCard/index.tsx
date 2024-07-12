@@ -35,7 +35,7 @@ const GenreCard = ({ image, url, name, canExpand = false }: GenreCardProps) => {
         role="link"
         tabIndex={0}
       >
-        <CachedImage src={image} alt="" fill style={{ objectFit: 'cover' }} />
+        <CachedImage src={image} alt="" layout="fill" objectFit="cover" />
         <div
           className={`absolute inset-0 z-10 h-full w-full bg-gray-800 transition duration-300 ${
             isHovered ? 'bg-opacity-10' : 'bg-opacity-30'

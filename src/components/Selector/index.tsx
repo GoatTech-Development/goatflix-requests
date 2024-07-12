@@ -376,9 +376,10 @@ export const WatchProviderSelector = ({
                     <CachedImage
                       src={`https://image.tmdb.org/t/p/original${provider.logoPath}`}
                       alt=""
-                      fill
+                      layout="responsive"
+                      width="100%"
+                      height="100%"
                       className="rounded-lg"
-                      style={{ objectFit: 'cover' }}
                     />
                     {isActive && (
                       <div className="pointer-events-none absolute -top-1 -left-1 flex items-center justify-center text-indigo-100 opacity-90">
@@ -417,8 +418,9 @@ export const WatchProviderSelector = ({
                       <CachedImage
                         src={`https://image.tmdb.org/t/p/original${provider.logoPath}`}
                         alt=""
-                        fill
-                        style={{ maxWidth: '100%', height: 'auto' }}
+                        layout="responsive"
+                        width="100%"
+                        height="100%"
                         className="rounded-lg"
                       />
                       {isActive && (
