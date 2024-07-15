@@ -8,7 +8,7 @@ on: workflow_dispatch
 jobs:
   build_and_push:
     name: Build & Publish Docker Preview Images
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,5 +40,5 @@ jobs:
           build-args: |
             COMMIT_TAG=${{ github.sha }}
           tags: |
-            goattech-development/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
+            liquidgoat/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
             ghcr.io/goattech-development/goatflix-requests:${{ steps.get_version.outputs.VERSION }}

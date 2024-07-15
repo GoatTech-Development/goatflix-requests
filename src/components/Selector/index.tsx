@@ -377,8 +377,7 @@ export const WatchProviderSelector = ({
                       src={`https://image.tmdb.org/t/p/original${provider.logoPath}`}
                       alt=""
                       layout="responsive"
-                      width="100%"
-                      height="100%"
+                      style={{ width: '100%', height: '100%' }}
                       className="rounded-lg"
                     />
                     {isActive && (
@@ -419,8 +418,7 @@ export const WatchProviderSelector = ({
                         src={`https://image.tmdb.org/t/p/original${provider.logoPath}`}
                         alt=""
                         layout="responsive"
-                        width="100%"
-                        height="100%"
+                        style={{ width: '100%', height: '100%' }}
                         className="rounded-lg"
                       />
                       {isActive && (
