@@ -12,9 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Get the version
-        id: get_version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -40,5 +37,5 @@ jobs:
           build-args: |
             COMMIT_TAG=${{ github.sha }}
           tags: |
-            liquidgoat/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
-            ghcr.io/goattech-development/goatflix-requests:${{ steps.get_version.outputs.VERSION }}
+            liquidgoat/goatflix-requests:${{  github.ref_name }}
+            ghcr.io/goattech-development/goatflix-requests:${{  github.ref_name }}
