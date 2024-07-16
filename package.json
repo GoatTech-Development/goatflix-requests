@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nhitz/goatflix-requests.git"
+    "url": "https://github.com/goattech-development/goatflix-requests.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -228,8 +228,8 @@
           "COMMIT_TAG": "$GIT_SHA"
         },
         "imageNames": [
-          "liquidgoat/goatflix-requests",
-          "ghcr.io/nhitz/goatflix-requests"
+          "goattech-development/goatflix-requests",
+          "ghcr.io/goattech-development/goatflix-requests"
         ],
         "platforms": [
           "linux/amd64"

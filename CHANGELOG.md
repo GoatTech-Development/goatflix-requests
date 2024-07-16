@@ -1,4 +1,4 @@
-# [2.0.0](https://github.com/nhitz/goatflix-requests/compare/v1.33.2...v2.0.0) (2023-12-27)
+# [1.33.3](https://github.com/nhitz/goatflix-requests/compare/v1.33.2...v1.33.3) (2023-12-27)
 
 ### Features
 
