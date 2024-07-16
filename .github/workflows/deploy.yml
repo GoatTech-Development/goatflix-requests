@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: goattech-development/goatflix-requests
+          images: liquidgoat/goatflix-requests
       - name: Build and push
         uses: docker/build-push-action@v6.4.0
         with:
