@@ -35,7 +35,7 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: ${{ steps.meta.outputs.tags }}
-          build-args: TAG=${{ steps.meta.outputs.version }}
+          build-args: TAG=${{ steps.meta.outputs.version }}, COMMIT_TAG=${{ github.sha }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
