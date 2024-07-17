@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   semantic-release:
     name: Tag and release latest version
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3
