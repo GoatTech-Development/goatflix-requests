@@ -16,7 +16,7 @@ import useSWR from 'swr';
 
 const messages = defineMessages({
   about: 'About',
-  overseerrinformation: 'About Overseerr',
+  overseerrinformation: 'About Goatflix',
   version: 'Version',
   totalmedia: 'Total Media',
   totalrequests: 'Total Requests',
@@ -24,7 +24,7 @@ const messages = defineMessages({
   githubdiscussions: 'GitHub Discussions',
   timezone: 'Time Zone',
   appDataPath: 'Data Directory',
-  supportoverseerr: 'Support Overseerr',
+  supportoverseerr: 'Support Goatflix',
   helppaycoffee: 'Help Pay for Coffee',
   documentation: 'Documentation',
   preferredmethod: 'Preferred',
@@ -33,7 +33,7 @@ const messages = defineMessages({
   betawarning:
     'This is BETA software. Features may be broken and/or unstable. Please report any issues on GitHub!',
   runningDevelop:
-    'You are running the <code>develop</code> branch of Overseerr, which is only recommended for those contributing to development or assisting with bleeding-edge testing.',
+    'You are running the <code>develop</code> branch of goatflix, which is only recommended for those contributing to development or assisting with bleeding-edge testing.',
 });
 
 const SettingsAbout = () => {
@@ -71,7 +71,7 @@ const SettingsAbout = () => {
             </p>
             <p className="mt-3 text-sm leading-5 md:mt-0 md:ml-6">
               <a
-                href="http://github.com/sct/overseerr"
+                href="https://github.com/GoatTech-Development/goatflix-requests"
                 className="whitespace-nowrap font-medium text-gray-100 transition duration-150 ease-in-out hover:text-white"
                 target="_blank"
                 rel="noreferrer"
@@ -105,8 +105,8 @@ const SettingsAbout = () => {
                 <a
                   href={
                     data.version.startsWith('develop-')
-                      ? `https://github.com/sct/overseerr/compare/${status.commitTag}...develop`
-                      : 'https://github.com/sct/overseerr/releases'
+                      ? `https://github.com/GoatTech-Development/goatflix-requests/compare/${status.commitTag}...develop`
+                      : 'https://github.com/GoatTech-Development/goatflix-requests/releases'
                   }
                   target="_blank"
                   rel="noopener noreferrer"
@@ -122,8 +122,8 @@ const SettingsAbout = () => {
                 <a
                   href={
                     data.version.startsWith('develop-')
-                      ? 'https://github.com/sct/overseerr/commits/develop'
-                      : 'https://github.com/sct/overseerr/releases'
+                      ? 'https://github.com/GoatTech-Development/goatflix-requests/commits/'
+                      : 'https://github.com/GoatTech-Development/goatflix-requests/releases'
                   }
                   target="_blank"
                   rel="noopener noreferrer"
