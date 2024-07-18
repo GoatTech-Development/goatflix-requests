@@ -28,7 +28,7 @@ const messages = defineMessages({
 });
 
 const REPO_RELEASE_API =
-  'https://api.github.com/repos/goattech-developmnent/goatflix-requests/releases?per_page=20';
+  'https://api.github.com/repos/goattech-development/goatflix-requests/releases?per_page=20';
 
 interface GitHubRelease {
   url: string;
