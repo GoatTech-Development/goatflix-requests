@@ -35,6 +35,7 @@
     "@formatjs/intl-utils": "3.8.4",
     "@headlessui/react": "1.7.12",
     "@heroicons/react": "2.0.16",
+    "@sentry/nextjs": "8",
     "@sentry/node": "^8.20.0",
     "@sentry/profiling-node": "^8.20.0",
     "@supercharge/request-ip": "1.2.0",
