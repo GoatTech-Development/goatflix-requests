@@ -1,3 +1,4 @@
+require("./instrument.js");
 import PlexAPI from '@server/api/plexapi';
 import dataSource, { getRepository } from '@server/datasource';
 import DiscoverSlider from '@server/entity/DiscoverSlider';
@@ -35,6 +36,8 @@ import next from 'next';
 import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
+
+import * as Sentry from "@sentry/node";
 
 const API_SPEC_PATH = path.join(__dirname, '../overseerr-api.yml');
 
@@ -104,6 +107,10 @@ app
     if (settings.main.trustProxy) {
       server.enable('trust proxy');
     }
+
+
+    Sentry.setupExpressErrorHandler(server);
+
     server.use(cookieParser());
     server.use(express.json());
     server.use(express.urlencoded({ extended: true }));
