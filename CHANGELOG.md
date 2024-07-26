@@ -12,6 +12,13 @@
 
 * typo in release endpoint ([487a781](https://github.com/goattech-development/goatflix-requests/commit/487a781e994136390bf08e194b3aebce4be7d19e))
 
+## [1.33.4](https://github.com/goattech-development/goatflix-requests/compare/v1.33.3...v1.33.4) (2024-07-26)
+
+
+### Bug Fixes
+
+* typo in release endpoint ([487a781](https://github.com/goattech-development/goatflix-requests/commit/487a781e994136390bf08e194b3aebce4be7d19e))
+
 # [1.33.3](https://github.com/nhitz/goatflix-requests/compare/v1.33.2...v1.33.3) (2023-12-27)
 
 ### Features
