@@ -233,7 +233,7 @@
           "COMMIT_TAG": "$GIT_SHA"
         },
         "imageNames": [
-          "goattech-development/goatflix-requests",
+          "liquidgoat/goatflix-requests",
           "ghcr.io/goattech-development/goatflix-requests"
         ],
         "platforms": [
