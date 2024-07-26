@@ -1,0 +1,61 @@
+name: branch-deploy
+
+on:
+  issue_comment:
+    types: [ created ]
+
+# Permissions needed for reacting and adding comments for IssueOps commands
+permissions:
+  pull-requests: write
+  deployments: write
+  contents: write
+  checks: read
+
+jobs:
+  deploy:
+    environment: secrets
+    if: ${{ github.event.issue.pull_request }} # only run on pull request comments
+    runs-on: self-hosted
+
+    steps:
+
+      - uses: github/branch-deploy@v9.3.0
+        id: branch-deploy
+        with:
+          admins: nhitz
+          skip_ci: staging
+          skip_reviews: staging
+          environment_targets: staging
+          environment_urls: staging|https://staging.goatflix.tv
+          sticky_locks: "true"
+
+      # deploy to the staging env and also save the stdout to a file
+      - name: deploy - staging
+        id: staging-deploy
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' &&
+          steps.branch-deploy.outputs.noop != 'true' &&
+          steps.branch-deploy.outputs.environment == 'staging' }}
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd staging-goatflix
+            docker compose pull
+            docker compose up -d
+
+      # fetch the staging url from stdout and save add it to the deploy message
+      - name: add staging url to deploy message
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' &&
+          steps.branch-deploy.outputs.noop != 'true' &&
+          steps.branch-deploy.outputs.environment == 'staging' }}
+        env:
+          DEPLOYMENT_URL: ${{ steps.staging-deploy.outputs.deployment-url }}
+          CMD_OUTPUT: ${{ steps.staging-deploy.outputs.command-output }}
+        run: |
+          echo "for debugging (cmd output): ${CMD_OUTPUT}"
+          echo ""
+          echo "DEPLOY_MESSAGE=${DEPLOYMENT_URL}" >> $GITHUB_ENV
+          echo "DEPLOY_MESSAGE=${DEPLOYMENT_URL}"
