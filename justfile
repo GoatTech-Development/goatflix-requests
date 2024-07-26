@@ -9,3 +9,6 @@ build-image:
 
 build-testing-image:
   docker build --platform linux/amd64 --build-arg COMMIT_TAG=$(git rev-parse --short HEAD) -t goattech-development/goatflix-requests-testing:latest .
+
+build-testing-image-arm64:
+  docker build --platform linux/arm64 --build-arg COMMIT_TAG=$(git rev-parse --short HEAD) -t goattech-development/goatflix-requests-testing:arm64 .

@@ -5,6 +5,8 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { defineMessages, useIntl } from 'react-intl';
 
+import * as Sentry from '@sentry/nextjs';
+
 interface ErrorProps {
   statusCode?: number;
 }
@@ -55,6 +57,8 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
 };
 
 Error.getInitialProps = async ({ res, err }): Promise<ErrorProps> => {
+  await Sentry.captureUnderscoreErrorException( { res, err } );
+
   // Apologies for how gross ternary is but this is just temporary. Honestly,
   // blame the nextjs docs
   let statusCode: Undefinable<number>;
