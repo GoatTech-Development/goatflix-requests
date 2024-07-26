@@ -104,12 +104,11 @@ app
     await DiscoverSlider.bootstrapSliders();
 
     const server = express();
+    Sentry.setupExpressErrorHandler(server);
+
     if (settings.main.trustProxy) {
       server.enable('trust proxy');
     }
-
-
-    Sentry.setupExpressErrorHandler(server);
 
     server.use(cookieParser());
     server.use(express.json());
