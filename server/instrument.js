@@ -3,7 +3,6 @@ const Sentry = require("@sentry/node");
 const { nodeProfilingIntegration } = require("@sentry/profiling-node");
 
 Sentry.init({
-  environment: "production",
   dsn: "https://134cd6224faf1bae2447527cd0a809e1@o4507657473490944.ingest.us.sentry.io/4507657480175616",
   integrations: [
     nodeProfilingIntegration(),
@@ -13,4 +12,6 @@ Sentry.init({
 
   // Set sampling rate for profiling - this is relative to tracesSampleRate
   profilesSampleRate: 1.0,
+
+  environment: process.env.NODE_ENV,
 });

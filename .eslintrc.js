@@ -18,6 +18,7 @@ module.exports = {
     },
   },
   rules: {
+    '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/no-use-before-define': 0,
     'jsx-a11y/no-noninteractive-tabindex': 0,
