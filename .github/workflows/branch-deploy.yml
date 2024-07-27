@@ -29,7 +29,6 @@ jobs:
           environment: staging
           environment_targets: staging
           environment_urls: staging|https://staging.goatflix.tv
-          sticky_locks: "true"
 
       # deploy to the staging env and also save the stdout to a file
       - name: deploy - staging
