@@ -25,6 +25,8 @@ jobs:
           admins: nhitz
           skip_ci: staging
           skip_reviews: staging
+          stable_branch: "master"
+          environment: staging
           environment_targets: staging
           environment_urls: staging|https://staging.goatflix.tv
           sticky_locks: "true"
