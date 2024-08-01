@@ -1,4 +1,4 @@
-FROM node:18.17-alpine AS build_image
+FROM node:20.16.0-alpine AS build_image
 
 WORKDIR /app
 
@@ -25,7 +25,7 @@ RUN touch config/DOCKER
 RUN echo "{\"commitTag\": \"${COMMIT_TAG}\"}" > committag.json
 
 
-FROM node:18.17-alpine
+FROM node:20.16.0-alpine
 
 WORKDIR /app
 
