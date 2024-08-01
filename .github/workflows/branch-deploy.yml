@@ -15,7 +15,7 @@ jobs:
   deploy:
     environment: secrets
     if: ${{ github.event.issue.pull_request }} # only run on pull request comments
-    runs-on: self-hosted
+    runs-on: [self-hosted, linux]
 
     steps:
 
