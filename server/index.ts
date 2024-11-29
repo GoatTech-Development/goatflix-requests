@@ -42,6 +42,14 @@ import * as Sentry from "@sentry/node";
 const API_SPEC_PATH = path.join(__dirname, '../overseerr-api.yml');
 
 logger.info(`Starting Overseerr version ${getAppVersion()}`);
+logger.info(`
+                    __   __               __    
+.-----.-----.---.-.|  |_|  |_.-----.----.|  |--.
+|  _  |  _  |  _  ||   _|   _|  -__|  __||     |
+|___  |_____|___._||____|____|_____|____||__|__|
+|_____|                                         
+
+`);
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
