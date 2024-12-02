@@ -42,7 +42,18 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
+            # Get PR number from context
+            PR_NUMBER=${{ steps.branch-deploy.outputs.issue_number }}
+
+            # Navigate to the project directory
             cd staging-goatflix
+
+            # Update docker-compose.yml with the PR number as the tag
+            sed -i "s|liquidgoat/goatflix-requests:.*|liquidgoat/goatflix-requests:pr-${PR_NUMBER}|g" docker-compose.yml
+
+            echo "Updated docker-compose.yml with PR number: pr-${PR_NUMBER}"
+
+            # Pull the updated image and restart the container
             docker compose pull
             docker compose up -d
 
