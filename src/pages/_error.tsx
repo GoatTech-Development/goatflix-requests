@@ -57,7 +57,7 @@ const Error: NextPage<ErrorProps> = ({ statusCode }) => {
 };
 
 Error.getInitialProps = async ({ res, err }): Promise<ErrorProps> => {
-  await Sentry.captureUnderscoreErrorException( { res, err } );
+  await Sentry.captureUnderscoreErrorException({ res, err });
 
   // Apologies for how gross ternary is but this is just temporary. Honestly,
   // blame the nextjs docs

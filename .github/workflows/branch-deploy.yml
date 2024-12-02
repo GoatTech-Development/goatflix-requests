@@ -2,7 +2,7 @@ name: branch-deploy
 
 on:
   issue_comment:
-    types: [ created ]
+    types: [created]
 
 # Permissions needed for reacting and adding comments for IssueOps commands
 permissions:
@@ -18,14 +18,13 @@ jobs:
     runs-on: [self-hosted, linux]
 
     steps:
-
       - uses: github/branch-deploy@v9.3.0
         id: branch-deploy
         with:
           admins: nhitz
           skip_ci: staging
           skip_reviews: staging
-          stable_branch: "master"
+          stable_branch: 'master'
           environment: staging
           environment_targets: staging
           environment_urls: staging|https://staging.goatflix.tv

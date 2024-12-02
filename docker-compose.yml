@@ -10,7 +10,7 @@ services:
       - .:/app:rw,cached
       - /app/node_modules
       - /app/.next
-  
+
   plex:
     image: lscr.io/linuxserver/plex:latest
     container_name: plex
@@ -37,15 +37,15 @@ services:
     image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     environment:
-    - PUID=1000
-    - PGID=1000
-    - TZ=America/Los_Angeles
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
     volumes:
-    - ./testing/radarr/config:/config
-    - ./testing/downloads:/downloads
-    - ./testing/movies:/movies
+      - ./testing/radarr/config:/config
+      - ./testing/downloads:/downloads
+      - ./testing/movies:/movies
     ports:
-    - 7878:7878
+      - 7878:7878
     restart: unless-stopped
 
   sabnzbd:

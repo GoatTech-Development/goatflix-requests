@@ -1,4 +1,4 @@
-require("./instrument.js");
+require('./instrument.js');
 import PlexAPI from '@server/api/plexapi';
 import dataSource, { getRepository } from '@server/datasource';
 import DiscoverSlider from '@server/entity/DiscoverSlider';
@@ -37,7 +37,7 @@ import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 
-import * as Sentry from "@sentry/node";
+import * as Sentry from '@sentry/node';
 
 const API_SPEC_PATH = path.join(__dirname, '../overseerr-api.yml');
 
