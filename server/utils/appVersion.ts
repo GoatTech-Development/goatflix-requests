@@ -6,7 +6,6 @@ const COMMIT_TAG_PATH = path.join(__dirname, '../../committag.json');
 let commitTag = 'local';
 
 if (existsSync(COMMIT_TAG_PATH)) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   commitTag = require(COMMIT_TAG_PATH).commitTag;
   logger.info(`Commit Tag: ${commitTag}`);
 }
@@ -16,7 +15,6 @@ export const getCommitTag = (): string => {
 };
 
 export const getAppVersion = (): string => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { version } = require('../../package.json');
 
   let finalVersion = version;

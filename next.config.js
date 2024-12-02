@@ -1,7 +1,7 @@
 /**
  * @type {import('next').NextConfig}
  */
-const {withSentryConfig} = require("@sentry/nextjs");
+const { withSentryConfig } = require('@sentry/nextjs');
 
 const nextConfig = {
   env: {
@@ -25,16 +25,14 @@ const nextConfig = {
   },
 };
 
-
 // Injected content via Sentry wizard below
-
 
 const sentryWebpackPluginOptions = {
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 
-  org: "goattech-development",
-  project: "goatflix",
+  org: 'goattech-development',
+  project: 'goatflix',
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
@@ -49,7 +47,7 @@ const sentryWebpackPluginOptions = {
   // This can increase your server load as well as your hosting bill.
   // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
   // side errors will fail.
-  tunnelRoute: "/monitoring-tunnel",
+  // tunnelRoute: "/monitoring-tunnel",
 
   // Hides source maps from generated client bundles
   hideSourceMaps: true,

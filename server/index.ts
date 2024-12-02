@@ -1,4 +1,4 @@
-require("./instrument.js");
+require('./instrument.js');
 import PlexAPI from '@server/api/plexapi';
 import dataSource, { getRepository } from '@server/datasource';
 import DiscoverSlider from '@server/entity/DiscoverSlider';
@@ -37,11 +37,19 @@ import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 
-import * as Sentry from "@sentry/node";
+import * as Sentry from '@sentry/node';
 
 const API_SPEC_PATH = path.join(__dirname, '../overseerr-api.yml');
 
 logger.info(`Starting Overseerr version ${getAppVersion()}`);
+logger.info(`
+                    __   __               __    
+.-----.-----.---.-.|  |_|  |_.-----.----.|  |--.
+|  _  |  _  |  _  ||   _|   _|  -__|  __||     |
+|___  |_____|___._||____|____|_____|____||__|__|
+|_____|                                         
+
+`);
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -183,7 +191,7 @@ app
         },
         store: new TypeormStore({
           cleanupLimit: 2,
-          ttl: 1000 * 60 * 60 * 24 * 30,
+          ttl: 60 * 60 * 24 * 30,
         }).connect(sessionRespository) as Store,
       })
     );
