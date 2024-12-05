@@ -7,7 +7,7 @@ const devConfig: DataSourceOptions = {
   database: process.env.CONFIG_DIRECTORY
     ? `${process.env.CONFIG_DIRECTORY}/db/db.sqlite3`
     : 'config/db/db.sqlite3',
-  synchronize: true,
+  synchronize: false,
   migrationsRun: false,
   logging: false,
   enableWAL: true,
